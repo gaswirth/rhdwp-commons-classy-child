@@ -20,6 +20,8 @@ add_action( 'wp_enqueue_scripts', 'rhd_theme_enqueue_styles' );
 function rhd_theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', RHD_THEME_DIR . '/style.css' );
     wp_enqueue_style( 'child-main', RHD_CHILD_DIR . '/css/main.css', array( 'rhd-main' ) );
+
+    wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Oswald:400,700' );
 }
 
 add_action( 'wp_enqueue_scripts', 'rhd_theme_enqueue_scripts' );
