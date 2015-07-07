@@ -3,17 +3,17 @@
    ========================================================================== */
 
 // Variables
-
+$color2 = #ee546a
 
 
 // Classes
 
 .unselectable
-	-webkit-user-select: none; /* Chrome/Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	-o-user-select: none;
-	user-select: none;
+	-webkit-user-select none /* Chrome/Safari */
+	-moz-user-select none /* Firefox */
+	-ms-user-select none /* IE10+ */
+	-o-user-select none
+	user-select none
 
 
 .invisible
@@ -22,7 +22,9 @@
 	margin 0
 
 
-.clearfix
+// Functions
+
+-clearfix()
 	&:before
 	&:after
 		content " " /* 1 */
@@ -32,10 +34,9 @@
 		clear both
 
 
-// Manual Flexbox
-
-.flexbox
+-flexbox()
 	text-align justify
+	padding 0
 
 	&:after
 		width 100%
@@ -43,55 +44,83 @@
 		content ''
 
 
-.flexitem
+-flexitem()
 	display inline-block
 
 
-// Functions
 
-wrapper( $topMargin = false, $bottomMargin = false )
-	width 90%
-	position relative
+-ff_body()
+	font-family 'Oswald', sans-serif
+
+
+-opacity( $val )
+	-moz-opacity $val
+	-webkit-opacity $val
+	opacity $val
+
+
+-transform( $val )
+	-webkit-transform $val
+	transform $val
+
+
+-transition( $val )
+	-webkit-transition $val
+	transition $val
+
+
+-border-radius( $rad )
+	-webkit-border-radius $rad
+	-moz-border-radius $rad
+	border-radius $rad
+
+
+-wrapper( $topMargin = false, $bottomMargin = false, $customWidth = false )
+	if $customWidth == false
+		$w = 85%
+	else
+		$w = $customWidth
 
 	if $topMargin == false
 		$topMargin = 0
 	if $bottomMargin == false
 		$bottomMargin = 0
 
+	width $w
+	max-width 64em
+	position relative
 	margin $topMargin auto $bottomMargin auto
 
 
-body-shadow( $yPos )
+-unwrapper()
+	width 100%
+
+
+-body-shadow( $yPos )
 	box-shadow 0em $yPos 0.45em 0em rgba(0,0,0,0.5)
 
 
-placeholder-props( $famVal, $color)
+-placeholder-props( $famVal, $color, $opacity = null)
 	&::-webkit-input-placeholder
 		font-family $famVal
 		color $color
+		if $opacity != null
+			-opacity($opacity)
+
 	&:-moz-placeholder /* Firefox 18- */
 		font-family $famVal
 		color $color
+		if $opacity != null
+			-opacity($opacity)
+
 	&::-moz-placeholder  /* Firefox 19+ */
 		font-family $famVal
 		color $color
+		if $opacity != null
+			-opacity($opacity)
+
 	&:-ms-input-placeholder
 		font-family $famVal
 		color $color
-
-
-opacity( $val )
-	-moz-opacity $val
-	-webkit-opacity $val
-	opacity $val
-
-
-transform( $val )
-	-webkit-transform $val
-	transform $val
-
-
-border-radius( $rad )
-	-webkit-border-radius $rad
-	-moz-border-radius $rad
-	border-radius $rad
+		if $opacity != null
+			-opacity($opacity)

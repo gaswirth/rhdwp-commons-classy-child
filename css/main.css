@@ -1,7 +1,19 @@
 /***
-* RHD Dev: Compiled at 1:51:08 PM on 29-04-2015
+* RHD Dev: Compiled at 4:16:39 PM on 07-07-2015
 ***/
 
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.invisible {
+  position: absolute;
+  visibility: hidden;
+  margin: 0;
+}
 /* ==========================================================================
 	Child Main Stylesheet
    ========================================================================== */
