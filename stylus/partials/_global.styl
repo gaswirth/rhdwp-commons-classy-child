@@ -3,7 +3,11 @@
    ========================================================================== */
 
 // Variables
-$color2 = #ee546a
+$navy = #182049
+$blue = #07537a
+
+$ff_body = 'Playfair Display', serif
+$ff_special = 'Vast Shadow', serif
 
 
 // Classes
@@ -46,11 +50,6 @@ $color2 = #ee546a
 
 -flexitem()
 	display inline-block
-
-
-
--ff_body()
-	font-family 'Oswald', sans-serif
 
 
 -opacity( $val )
@@ -124,3 +123,12 @@ $color2 = #ee546a
 		color $color
 		if $opacity != null
 			-opacity($opacity)
+
+
+// User
+
+-ff-body-italic()
+	font-family $ff_body
+	letter-spacing 1px
+	font-style italic
+	font-weight 700
