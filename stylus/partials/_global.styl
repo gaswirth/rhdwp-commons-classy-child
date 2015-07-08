@@ -3,13 +3,16 @@
    ========================================================================== */
 
 // Variables
-$color2 = #4f8599
-$color2-light = #5a99b0
+$ff_body = 'Oswald', sans-serif
+$color2 = #ee546a
+$color2-lt = #ff5970
+$gray = #dbdbdb
+$gray-dk = #b8b8b8
 
 
 // Classes
 
--unselectable()
+.unselectable
 	-webkit-user-select none /* Chrome/Safari */
 	-moz-user-select none /* Firefox */
 	-ms-user-select none /* IE10+ */
@@ -17,11 +20,13 @@ $color2-light = #5a99b0
 	user-select none
 
 
--invisible()
+.invisible
 	position absolute
 	visibility hidden
 	margin 0
 
+
+// Functions
 
 -clearfix()
 	&:before
@@ -47,11 +52,6 @@ $color2-light = #5a99b0
 	display inline-block
 
 
-
--ff_body()
-	font-family 'Oswald', sans-serif
-
-
 -opacity( $val )
 	-moz-opacity $val
 	-webkit-opacity $val
@@ -61,6 +61,11 @@ $color2-light = #5a99b0
 -transform( $val )
 	-webkit-transform $val
 	transform $val
+
+
+-transition( $val )
+	-webkit-transition $val
+	transition $val
 
 
 -border-radius( $rad )
@@ -118,3 +123,10 @@ $color2-light = #5a99b0
 		color $color
 		if $opacity != null
 			-opacity($opacity)
+
+
+// User Functions
+
+-border-style()
+	border 0.25rem solid $color2
+	-border-radius 0.15rem

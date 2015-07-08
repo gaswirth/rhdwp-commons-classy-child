@@ -1,15 +1,379 @@
 /***
-* RHD Dev: Compiled at 8:12:57 PM on 06-07-2015
+* RHD Dev: Compiled at 6:48:23 PM on 07-07-2015
 ***/
 
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.invisible {
+  position: absolute;
+  visibility: hidden;
+  margin: 0;
+}
 /* ==========================================================================
 	Child Main Stylesheet
    ========================================================================== */
-html {
+html,
+body {
+  min-height: 100%;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 1px;
+}
+body {
+  background: url("../img/bg.jpg") no-repeat fixed;
+  background-size: cover;
+}
+a {
+  color: #ee546a;
+  -webkit-transition: all;
+  transition: all;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+#page,
+#main {
+  min-height: 100%;
+}
+#site-navigation {
+  font-size: 1.3em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  padding-right: 0.5em;
+}
+#site-navigation a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #fff;
+}
+#site-navigation a:hover,
+#site-navigation a:active {
+  color: #ee546a;
+}
+#social {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em auto 0;
+  text-align: center;
+}
+#social .social-item {
+  width: 4.5em;
+  height: auto;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+#social .social-item img {
+  width: 100%;
+  height: auto;
 }
 #masthead {
+  width: 100%;
   background: none;
+}
+#masthead .title-area {
+  width: 95%;
+  max-width: 64em;
+  position: relative;
+  margin: 0 auto 0 auto;
+  max-width: none;
+}
+#masthead .title-area:before,
+#masthead .title-area:after {
+  content: " ";
+  display: table;
+}
+#masthead .title-area:after {
+  clear: both;
+}
+#masthead .title-area .title-group {
+  width: 40em;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 0.5rem;
+}
+#masthead .title-area .title-group #site-title,
+#masthead .title-area .title-group #site-description {
+  width: 40em;
+  max-width: 95%;
+  margin: 0;
+}
+#masthead .title-area .title-group #site-title {
+  width: 75%;
+  float: left;
+}
+#masthead .title-area .title-group #site-description {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-align: left;
+  text-align: center;
+  margin-top: 1rem;
+}
+#masthead .title-area .title-group #hamburger {
+  position: absolute;
+  top: 0.6rem;
+  right: 0;
+  margin: 0;
+}
+#content {
+  width: 90%;
+  max-width: 64em;
+  position: relative;
+  margin: 1em auto 1em auto;
+}
+#content .entry-title,
+#content .page-title {
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+#content .entry-content {
+  font-size: 1.1em;
+}
+#content .entry-content img,
+#content .entry-content iframe,
+#content .entry-content .arve-wrapper {
+  max-width: 100%;
+  border: 0.25rem solid #ee546a;
+  -webkit-border-radius: 0.15rem;
+  -moz-border-radius: 0.15rem;
+  border-radius: 0.15rem;
+}
+#content .entry-content .no-border {
+  border: none;
+}
+#content .bio {
+  width: 100%;
+  margin: 2em auto 1em auto;
+  padding: 1em 0;
+}
+#content .bio:before,
+#content .bio:after {
+  content: " ";
+  display: table;
+}
+#content .bio:after {
+  clear: both;
+}
+#content .bio .bio-content {
+  width: 100%;
+}
+#content .bio .bio-content h3 {
+  margin-top: 0;
+}
+#content .bio > img {
+  width: 75%;
+  max-width: 314px;
+  margin: 0 auto 1em;
+  float: none;
+  display: block;
+}
+#colophon {
+  background: #000;
+}
+/* ==========================================================================
+	Contact page
+   ========================================================================== */
+#contact-form-87 {
+  width: auto;
+  width: 90%;
+  max-width: 64em;
+  position: relative;
+  margin: 0 auto 1em auto;
+}
+#contact-form-87 .contact-form {
+  width: 100%;
+}
+#contact-form-87 .contact-form label {
+  font-weight: 400;
+}
+#contact-form-87 .contact-form label span {
+  color: #b8b8b8;
+}
+.contact-form input[type="text"],
+.rhd_mc_subscribe input[type="text"],
+.contact-form input[type="email"],
+.rhd_mc_subscribe input[type="email"],
+.contact-form textarea,
+.rhd_mc_subscribe textarea {
+  width: 100%;
+  max-width: none;
+  border: 0.25rem solid #ee546a;
+  -webkit-border-radius: 0.15rem;
+  -moz-border-radius: 0.15rem;
+  border-radius: 0.15rem;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  background-color: #fff;
+  font-family: 'Oswald', sans-serif;
+}
+.contact-form input[type="text"]:focus,
+.rhd_mc_subscribe input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.rhd_mc_subscribe input[type="email"]:focus,
+.contact-form textarea:focus,
+.rhd_mc_subscribe textarea:focus {
+  background-color: #dbdbdb;
+}
+.contact-form input[type="submit"],
+.rhd_mc_subscribe input[type="submit"] {
+  line-height: 1;
+  padding: 0.5em;
+  background-color: #ee546a;
+  color: #fff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.contact-form input[type="submit"]:hover,
+.rhd_mc_subscribe input[type="submit"]:hover {
+  background-color: #ff5970;
+}
+.rhd_mc_subscribe input {
+  height: 2.2rem;
+}
+.rhd_mc_subscribe input[type="text"],
+.rhd_mc_subscribe input[type="email"] {
+  margin-bottom: 0.5em;
+}
+.rhd_mc_subscribe input[type="text"]::-webkit-input-placeholder,
+.rhd_mc_subscribe input[type="email"]::-webkit-input-placeholder {
+  font-family: 'Oswald', sans-serif;
+  color: #b8b8b8;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+.rhd_mc_subscribe input[type="text"]:-moz-placeholder,
+.rhd_mc_subscribe input[type="email"]:-moz-placeholder {
+  font-family: 'Oswald', sans-serif;
+  color: #b8b8b8;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+.rhd_mc_subscribe input[type="text"]::-moz-placeholder,
+.rhd_mc_subscribe input[type="email"]::-moz-placeholder {
+  font-family: 'Oswald', sans-serif;
+  color: #b8b8b8;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+.rhd_mc_subscribe input[type="text"]:-ms-input-placeholder,
+.rhd_mc_subscribe input[type="email"]:-ms-input-placeholder {
+  font-family: 'Oswald', sans-serif;
+  color: #b8b8b8;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+.rhd_mc_subscribe input[type="submit"] {
+  margin-left: 0;
+}
+.widget_rhd_mailchimp_widget_gh {
+  margin-bottom: 2em;
+}
+.widget_rhd_mailchimp_widget_gh .widgettitle {
+  text-align: center;
+}
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+@media screen and (min-width: 40em) {
+  #site-navigation {
+    font-size: 1.7em;
+    line-height: 1.6;
+  }
+  #masthead .title-area {
+    position: relative;
+  }
+  #masthead .title-area .title-group {
+    float: left;
+    position: static;
+  }
+  #masthead .title-area .title-group #site-title {
+    width: auto;
+    float: none;
+  }
+  #masthead .title-area .title-group #site-description {
+    font-size: 1.468rem;
+    margin: 0;
+  }
+  #masthead .title-area .title-group #hamburger {
+    top: 6.5rem;
+  }
+  #content .entry-content iframe,
+  #content .entry-content .arve-wrapper {
+    max-width: 50rem;
+    display: block;
+    margin: 0 auto;
+  }
+  #content .entry-content .bio .bio-content {
+    width: 72%;
+  }
+  #content .entry-content .bio .bio-content-left {
+    float: left;
+  }
+  #content .entry-content .bio .bio-content-right {
+    float: right;
+  }
+  #content .entry-content .bio > img {
+    width: 25%;
+    max-width: 314px;
+    margin: 1em 0 0 0;
+  }
+  #content .entry-content .bio > img.alignleft {
+    float: left;
+  }
+  #content .entry-content .bio > img.alignright {
+    float: right;
+  }
+  #contact-form-87 {
+    width: 85%;
+    max-width: 64em;
+    position: relative;
+    margin: 0 auto 1em auto;
+  }
+  #contact-form-87 .contact-form {
+    width: 100%;
+  }
+  #contact-form-87 .contact-form input[type="text"],
+  #contact-form-87 .contact-form input[type="email"] {
+    width: 80%;
+  }
+  #contact-form-87 .contact-form textarea {
+    width: 100%;
+  }
+  .rhd_mc_subscribe {
+    width: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 0;
+  }
+  .rhd_mc_subscribe:after {
+    width: 100%;
+    display: inline-block;
+    content: '';
+  }
+  .rhd_mc_subscribe input {
+    display: inline-block;
+  }
+  .rhd_mc_subscribe input[type="email"],
+  .rhd_mc_subscribe input[type="text"] {
+    width: 28%;
+    margin-right: 2%;
+  }
+  .rhd_mc_subscribe inputtype["submit"] {
+    width: auto;
+    margin-right: 0;
+    bottom: 0.1rem;
+  }
 }

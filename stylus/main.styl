@@ -5,10 +5,301 @@
    ========================================================================== */
 
 html
-	-ff_body()
+	min-height 100%
+	font-family $ff_body
 	font-size 16px
 	font-weight 400
+	letter-spacing 1px
+
+
+body
+	@extends html
+	background url(../img/bg.jpg) no-repeat fixed
+	background-size cover
+
+
+a
+	color $color2
+	-transition(all,0.2s)
+	text-decoration none
+
+	&:hover
+	&:active
+		text-decoration underline
+
+
+#page
+#main
+	min-height 100%
+
+
+#site-navigation
+	font-size 1.3em
+	line-height 1.8
+	text-transform uppercase
+	padding-right 0.5em
+
+	a
+		-transition(all 0.2s)
+		color white
+
+		&:hover
+		&:active
+			color $color2
+
+
+#social
+	list-style none
+	padding 0
+	margin 1.5em auto 0
+	text-align center
+
+	.social-item
+		width 4.5em
+		height auto
+		display inline-block
+		margin 0 0.5rem
+
+		img
+			width 100%
+			height (@height)
 
 
 #masthead
+	width 100%
 	background none
+
+	.title-area
+		-wrapper(0,0, 95%)
+		max-width none
+		-clearfix()
+
+		.title-group
+			width 40em
+			max-width 100%
+			height auto
+			position relative
+			margin-top 0.5rem
+
+			#site-title
+			#site-description
+				width 40em
+				max-width 95%
+				margin 0
+
+			#site-title
+				width 75%
+				float left
+
+			#site-description
+				display inline-block
+				font-size 1.25rem
+				text-transform uppercase
+				text-align left
+				text-align center
+				margin-top 1rem
+
+			#hamburger
+				position absolute
+				top 0.6rem
+				right 0
+				margin 0
+
+
+#content
+	-wrapper(1em, 1em, 90%)
+
+	.entry-title
+	.page-title
+		text-transform uppercase
+		font-size 1.7em
+
+	.entry-content
+		font-size 1.1em
+
+		img
+		iframe
+		.arve-wrapper
+			max-width 100%
+			-border-style()
+
+		.no-border
+			border none
+
+	.bio
+		width 100%
+		margin 2em auto 1em auto
+		padding 1em 0
+		-clearfix()
+
+		.bio-content
+			width 100%
+
+			h3
+				margin-top 0
+
+		& > img
+			width 75%
+			max-width 314px
+			margin 0 auto 1em
+			float none
+			display block
+
+
+#colophon
+	background black
+
+
+/* ==========================================================================
+	Contact page
+   ========================================================================== */
+
+#contact-form-87
+	width auto
+	-wrapper(0, 1em, 90%)
+
+	.contact-form
+		width 100%
+
+		label
+			font-weight 400
+
+			span
+				color $gray-dk
+
+
+.contact-form
+.rhd_mc_subscribe
+	input[type="text"]
+	input[type="email"]
+	textarea
+		width 100%
+		max-width none
+		-border-style()
+		-transition(background-color 0.3s)
+		background-color white
+		font-family $ff_body
+
+		&:focus
+			background-color $gray
+
+	input[type="submit"]
+		line-height 1
+		padding 0.5em
+		background-color $color2
+		color white
+		-transition(background-color 0.2s)
+
+		&:hover
+			background-color $color2-lt
+
+
+.rhd_mc_subscribe
+	input
+		height 2.2rem
+
+	input[type="text"]
+	input[type="email"]
+		margin-bottom 0.5em
+		-placeholder-props( $ff_body, $gray-dk, 1 )
+
+	input[type="submit"]
+		margin-left 0
+
+
+.widget_rhd_mailchimp_widget_gh
+	margin-bottom 2em
+
+	.widgettitle
+		text-align center
+
+
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+
+@media screen and (min-width 40em)
+	#site-navigation
+		font-size 1.7em
+		line-height 1.6
+
+	#masthead
+		.title-area
+			position relative
+
+			.title-group
+				float left
+				position static
+
+				#site-title
+					width auto
+					float none
+
+				#site-description
+					font-size 1.468rem
+					margin 0
+
+				#hamburger
+					top 6.5rem
+
+
+	#content
+		.entry-content
+			iframe
+			.arve-wrapper
+				max-width 50rem
+				display block
+				margin 0 auto
+
+			.bio
+				.bio-content
+					width 72%
+
+				.bio-content-left
+					float left
+
+				.bio-content-right
+					float right
+
+				& > img
+					width 25%
+					max-width 314px
+					margin 1em 0 0 0
+
+					&.alignleft
+						float left
+
+					&.alignright
+						float right
+
+
+	#contact-form-87
+		-wrapper(0, 1em)
+
+		.contact-form
+			width 100%
+
+			input[type="text"]
+			input[type="email"]
+				width 80%
+
+			textarea
+				width 100%
+
+	.rhd_mc_subscribe
+		width 100%
+		margin 0 auto
+		-flexbox()
+
+		input
+			-flexitem()
+
+			&[type="email"]
+			&[type="text"]
+				width 28%
+				margin-right 2%
+
+			&type["submit"]
+				width auto
+				margin-right 0
+				bottom 0.1rem
