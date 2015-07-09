@@ -9,3 +9,66 @@ html
 
 body
 	@extends html
+
+
+/* ==========================================================================
+	Contact Page - CHANGE PAGE ID
+   ========================================================================== */
+
+#contact-form-81
+	width auto
+	-wrapper(0, 1em, 90%)
+
+	.contact-form
+		width 100%
+
+		input[type="text"]
+		input[type="email"]
+		textarea
+			width 100%
+			max-width none
+			border none
+			-border-radius 0.1em
+			-transition(background-color 0.3s)
+			background-color white
+			font-family $ff_body
+
+			&:focus
+				background-color $gray
+
+		input[type="submit"]
+			line-height 1
+			padding 0.5em
+			background-color #dedede
+			padding 0.5em 0.5em 0.3em 0.5em
+			color black
+			-transition(background-color 0.2s)
+
+			&:hover
+				background-color white
+
+		label
+			font-weight 400
+
+			span
+				color $gray-dk
+
+
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+
+@media screen and (min-width 40em)
+	// CHANGE PAGE ID
+	#contact-form-81
+		-wrapper(0, 1em)
+
+		.contact-form
+			width 100%
+
+			input[type="text"]
+			input[type="email"]
+				width 80%
+
+			textarea
+				width 100%

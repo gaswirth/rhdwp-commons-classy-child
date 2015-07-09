@@ -1,5 +1,5 @@
 /***
-* RHD Dev: Compiled at 4:52:03 PM on 08-07-2015
+* RHD Dev: Compiled at 6:50:04 PM on 09-07-2015
 ***/
 
 .unselectable {
@@ -20,4 +20,75 @@
 html,
 body {
   font-family: 'Oswald', sans-serif;
+}
+/* ==========================================================================
+	Contact Page - CHANGE PAGE ID
+   ========================================================================== */
+#contact-form-81 {
+  width: auto;
+  width: 90%;
+  max-width: 64em;
+  position: relative;
+  margin: 0 auto 1em auto;
+}
+#contact-form-81 .contact-form {
+  width: 100%;
+}
+#contact-form-81 .contact-form input[type="text"],
+#contact-form-81 .contact-form input[type="email"],
+#contact-form-81 .contact-form textarea {
+  width: 100%;
+  max-width: none;
+  border: none;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  border-radius: 0.1em;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  background-color: #fff;
+  font-family: 'Oswald', sans-serif;
+}
+#contact-form-81 .contact-form input[type="text"]:focus,
+#contact-form-81 .contact-form input[type="email"]:focus,
+#contact-form-81 .contact-form textarea:focus {
+  background-color: $gray;
+}
+#contact-form-81 .contact-form input[type="submit"] {
+  line-height: 1;
+  padding: 0.5em;
+  background-color: #dedede;
+  padding: 0.5em 0.5em 0.3em 0.5em;
+  color: #000;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+#contact-form-81 .contact-form input[type="submit"]:hover {
+  background-color: #fff;
+}
+#contact-form-81 .contact-form label {
+  font-weight: 400;
+}
+#contact-form-81 .contact-form label span {
+  color: $gray-dk;
+}
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+@media screen and (min-width: 40em) {
+  #contact-form-81 {
+    width: 85%;
+    max-width: 64em;
+    position: relative;
+    margin: 0 auto 1em auto;
+  }
+  #contact-form-81 .contact-form {
+    width: 100%;
+  }
+  #contact-form-81 .contact-form input[type="text"],
+  #contact-form-81 .contact-form input[type="email"] {
+    width: 80%;
+  }
+  #contact-form-81 .contact-form textarea {
+    width: 100%;
+  }
 }
