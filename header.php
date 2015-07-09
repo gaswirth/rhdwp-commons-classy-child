@@ -24,14 +24,6 @@
 		<link rel="profile" href="//gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-		<script>
-			WebFont.load({
-				google: {
-					families: ['Playfair Display:400,700,400italic,700italic', 'Vast Shadow']
-				}
-			});
-		</script>
-
 		<?php
 			// Basic front page & device detection
 			$body_classes[] = ( is_front_page() ) ? 'front-page' : '';
@@ -43,6 +35,13 @@
 
 		<?php wp_head(); ?>
 
+		<script>
+			WebFont.load({
+				google: {
+					families: ['Playfair Display:400,700,400italic,700italic', 'Vast Shadow']
+				}
+			});
+		</script>
 	</head>
 
 	<body <?php body_class( $body_classes ); ?>>
@@ -66,8 +65,9 @@
 		<div id="page" class="hfeed site sb-site-container">
 			<header id="masthead" class="site-header" role="banner">
 				<div class="title-group">
+					<h3 id="title-lead-in">the official website of writer & producer</h3>
 					<a href="<?php echo home_url(); ?>"><h1 id="site-title"><?php bloginfo( 'name' ); ?></h1></a>
-					<h3 id="site-description"><?php bloginfo( 'description' ); ?></h3>
+					<h2 id="site-description" class="invisible"><?php bloginfo('description'); ?></h2>
 				</div>
 
 <!--

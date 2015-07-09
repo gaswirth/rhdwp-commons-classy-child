@@ -7,6 +7,7 @@
 html
 	font-family $ff_body
 	font-weight 400
+	font-size 14px
 	color white
 	background-color $blue
 
@@ -15,17 +16,199 @@ body
 	@extends html
 
 
-#site-title
-	font-family $ff_special
-	font-size 3em
-	line-height 1
+a
+	color $pink
+	-transition(all 0.2s)
+	text-decoration none
+
+	&:hover
+	&:active
+		color $light-pink
 
 
-.title-group
-	a
-		color inherit
-		text-decoration none
+#site-navigation
+	font-size 2.2em
+	line-height 1.5
+	padding 0 0.3em 0 0
 
-	#site-description
-		-ff-body-italic()
-		font-size 1.5em
+	li
+		a
+			color $navy
+
+		.sub-menu
+			padding-right 0.75em
+			margin 0.5em 0
+
+
+.sb-slidebar
+	background-color white !important
+
+
+#masthead
+	background-color $navy
+	-clearfix()
+
+	.title-group
+		float left
+		position relative
+
+		a
+			color inherit
+			text-decoration none
+
+		#site-title
+			width 100%
+			line-height 1
+			font-family $ff_special
+			font-size 4.3em
+			text-align center
+			margin-top 0.5em
+
+		#title-lead-in
+			-ff-body-italic()
+			font-size 1.2em
+			text-align center
+			margin 0
+
+
+#content
+	margin 1em auto
+
+
+.type-post
+.type-project
+	.entry-title
+		margin-top 0
+		font-family $ff_special
+		font-weight normal
+		font-size 3em
+		line-height 1.1
+
+
+.entry-content
+	margin 1em inherit
+
+
+#colophon
+	background-color $navy
+
+
+/* ==========================================================================
+	Front Page (About) page
+   ========================================================================== */
+
+.page-id-43
+	#content
+		margin 0 auto
+		-unwrapper()
+		-clearfix()
+
+		#about-image
+			width 100%
+			height 100vh
+			background-size cover
+			background-position center center
+
+		#about-content
+			-wrapper(1.5em,2em)
+
+			.entry-content
+				font-size 1em
+
+
+/* ==========================================================================
+	Contact Page - CHANGE PAGE ID
+   ========================================================================== */
+
+#contact-form-81
+	width auto
+	-wrapper(0, 1em, 90%)
+
+	.contact-form
+		width 100%
+
+		input[type="text"]
+		input[type="email"]
+		textarea
+			width 100%
+			max-width none
+			-transition(background-color 0.3s)
+			background-color white
+			font-family $ff_body
+			-border-radius(0.2em)
+
+			&:focus
+				background-color $gray
+
+		input[type="submit"]
+			line-height 1
+			padding 0.5em 0.5em 0.3em 0.5em
+			background-color $pink
+			color white
+			-transition(background-color 0.2s)
+
+			&:hover
+				background-color $light-pink
+
+		label
+			font-weight 400
+
+			span
+				color #dedede
+
+
+/* ==========================================================================
+	Media Queries
+   ========================================================================== */
+
+@media screen and (min-width 40em)
+	#masthead
+		.title-group
+			left 3%
+
+			#site-title
+				position relative
+				left 14%
+				font-size 6em
+				margin-top 0
+
+			#title-lead-in
+				font-size 1.75em
+				padding-left 1%
+				text-align left
+
+	.page-id-43
+		#content
+			#about-content-container
+				height auto
+				position relative
+				-clearfix()
+
+			#about-image
+				width 40%
+				height 100%
+				position absolute
+				top 0
+				left 0
+				display block
+
+			#about-content
+				width 58%
+				float right
+				padding 1em 3em 2em 1em
+
+				.entry-content
+					text-align left
+
+	#contact-form-81
+		-wrapper(0, 1em)
+
+		.contact-form
+			width 100%
+
+			input[type="text"]
+			input[type="email"]
+				width 80%
+
+			textarea
+				width 100%

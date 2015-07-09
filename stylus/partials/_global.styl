@@ -5,9 +5,13 @@
 // Variables
 $navy = #182049
 $blue = #07537a
+$pink = #cb7194
+$light-pink = #e47ea6
 
 $ff_body = 'Playfair Display', serif
 $ff_special = 'Vast Shadow', serif
+
+$footer-ht = 6em
 
 
 // Classes
@@ -86,13 +90,13 @@ $ff_special = 'Vast Shadow', serif
 		$bottomMargin = 0
 
 	width $w
-	max-width 64em
 	position relative
 	margin $topMargin auto $bottomMargin auto
 
 
 -unwrapper()
 	width 100%
+	max-width none
 
 
 -body-shadow( $yPos )
