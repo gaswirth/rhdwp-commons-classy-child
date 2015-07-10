@@ -1,6 +1,6 @@
 <?php
 /**
- * Bloggy Child
+ * John Markus
  *
  * ROUNDHOUSE DESIGNS
  *

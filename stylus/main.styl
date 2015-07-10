@@ -75,14 +75,30 @@ a
 	margin 1em auto
 
 
+.entry-title
+	font-family $ff_special
+
+
+.page-title
+	@extends .entry-title
+	font-size 4em
+	text-align center
+
+
 .type-post
 .type-project
 	.entry-title
 		margin-top 0
-		font-family $ff_special
 		font-weight normal
 		font-size 3em
 		line-height 1.1
+
+		a
+			color white
+
+			&:hover
+			&:active
+				color $pink
 
 
 .entry-content
