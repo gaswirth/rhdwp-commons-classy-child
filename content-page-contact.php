@@ -17,7 +17,7 @@
 				// MailChimp
 				$instance = array(
 					'title' => 'SUBSCRIBE',
-					'text' => __('You know you want our newsletter. All the cool kids are signing up.'),
+					'text' => __("Sign our email list to almost never get an email from us! Send us a message if you'd might like to host a show in your home. We are going everywhere."),
 					'button' => 'Submit',
 					'fname' => true,
 					'lname' => true
